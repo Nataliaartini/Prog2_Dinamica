@@ -26,9 +26,31 @@ public class Tarefa{
 
         double media = (double)soma / lista.size(); 
 
+        ArrayList<Integer> primos = new ArrayList();
+
+        for(int i = 0; i < lista.size(); i++){
+            int numDivisoes = 0;
+            int numAtual = lista.get(i);
+            for(int num = numAtual; num > 0; num--){
+                if(numAtual % num == 0){
+                    numDivisoes++;
+                }
+
+                if(numDivisoes >= 3)
+                    break;
+            }
+
+            if(numDivisoes == 2)
+                primos.add(numAtual);
+        }
+
 
         System.out.println("Maximo: " + maximo);
         System.out.println("Minimo: " + minimo);
         System.out.println("Média: " + media);
+
+        System.out.print("Primos: ");
+        for(int i = 0; i < primos.size(); i++)
+            System.out.print(primos.get(i) + " ");
     }
 }
