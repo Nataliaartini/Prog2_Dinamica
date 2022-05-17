@@ -39,12 +39,15 @@ public class Tarefa{
         }
 
 
-        System.out.println("Maximo: " + maximo);
-        System.out.println("Minimo: " + minimo);
-        System.out.println("Média: " + media);
+        //System.out.println("Maximo: " + maximo);
+        //System.out.println("Minimo: " + minimo);
+        //System.out.println("Média: " + media);
 
         System.out.print("Primos: ");
         for(int i = 0; i < primos.size(); i++)
             System.out.print(primos.get(i) + " ");
+
+        System.out.print("Qtd divisiveis por 2: " + listaNum.QtdDivisiveis2());
+        System.out.print("Qtd divisiveis por 3 e 5: " + listaNum.QtdDivisiveis3e5());
     }
 }

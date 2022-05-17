@@ -49,4 +49,24 @@ public class ListaNumeros{
 
         return media;
     }
+
+    public int QtdDivisiveis2(){
+        int qtd = 0;
+        for(int i=0; i<tamanho; i++){
+            if(lista[i] % 2 == 0)
+                qtd++;
+        }
+
+        return qtd;
+    }
+
+    public int QtdDivisiveis3e5(){
+        int qtd = 0;
+        for(int i=0; i<tamanho; i++){
+            if(lista[i] % 3 == 0 && lista[i] % 5 == 0)
+                qtd++;
+        }
+
+        return qtd;
+    }
 }
