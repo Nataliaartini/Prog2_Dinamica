@@ -3,19 +3,24 @@ import java.util.*;
 
 public class ListaNumeros{
     public int tamanho = 0;
-    public int[] lista = new int[99999];
+    public double[] lista;
 
-    public void Adicionar(int numero){
+
+    public ListaNumeros(int size){
+        this.lista = new double[size];
+    }
+
+    public void Adicionar(double numero){
         this.lista[tamanho] = numero;
         this.tamanho++;
     }
 
-    public int Pegar(int posicao){
+    public double Pegar(int posicao){
         return this.lista[posicao];
     }
 
-    public int Maximo(){
-        int maximo = 0;
+    public double Maximo(){
+        double maximo = 0;
         for(int i=0; i<tamanho; i++){
             if(i == 0)
                 maximo = lista[i];
@@ -27,8 +32,8 @@ public class ListaNumeros{
         return maximo;
     }
 
-    public int Minimo(){
-        int minimo = 0;
+    public double Minimo(){
+        double minimo = 0;
         for(int i=0; i<tamanho; i++){
             if(i == 0)
                 minimo = lista[i];
