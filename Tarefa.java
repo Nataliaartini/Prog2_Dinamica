@@ -3,34 +3,28 @@ import java.util.*;
 
 public class Tarefa{
     public static void main(String args[]){
+        ListaNumeros listaNum = new ListaNumeros();
         Scanner scan = new Scanner(System.in);
-        ArrayList<Integer> lista = new ArrayList();
 
         System.out.println("Digite 'N' quanto quiser parar.");
         while(true){
             try{
                 int numero = scan.nextInt();
-                lista.add(numero);
+                listaNum.Adicionar(numero);
             }
             catch(Exception e){
                 break;
             }
         }
 
-        int maximo = Collections.max(lista);
-        int minimo = Collections.min(lista);
-
-        double soma = 0;
-        for(int i = 0; i < lista.size(); i++)
-            soma += lista.get(i);
-
-        double media = (double)soma / lista.size(); 
-
+        int maximo = listaNum.Maximo();
+        int minimo = listaNum.Minimo();
+        double media = listaNum.Media();
+        
         ArrayList<Integer> primos = new ArrayList();
-
-        for(int i = 0; i < lista.size(); i++){
+        for(int i = 0; i < listaNum.tamanho; i++){
             int numDivisoes = 0;
-            int numAtual = lista.get(i);
+            int numAtual = listaNum.Pegar(i);
             for(int num = numAtual; num > 0; num--){
                 if(numAtual % num == 0){
                     numDivisoes++;
